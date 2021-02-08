@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+small {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.5em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
+
+header {
+  width: 100%;
+  height: 650px;
+  background: #fff url("../images/desktop/image-hero.jpg") no-repeat center;
+  background-size: cover;
+}
+header nav {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin-left: 32px;
+}
+header nav ul li a {
+  font-family: "Alata";
+  color: #fff;
+}
+header nav ul li a:hover {
+  padding-bottom: 10px;
+  position: relative;
+}
+header nav ul li a:hover::after {
+  content: "";
+  height: 4px;
+  background: white;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: animationBorderMenu 0.3s ease-in-out forwards;
+}
+header .header-caption {
+  width: 50%;
+  display: inline-block;
+  margin-top: 60px;
+  padding: 36px;
+  font-family: "Josefin Sans";
+  font-weight: 300;
+  font-size: 2.1em;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid white;
+}
+
+main {
+  font-family: "Josefin Sans";
+  height: auto;
+  overflow: hidden;
+}
+main section#interactive-vr {
+  width: 100%;
+  margin: 100px 0;
+  position: relative;
+}
+main section#interactive-vr .interactive-vr__information {
+  width: 60%;
+  padding: 100px 100px 0 100px;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  background-color: white;
+}
+main section#interactive-vr .interactive-vr__information h2 {
+  text-transform: uppercase;
+  font-size: 3em;
+  margin-bottom: 28px;
+}
+main section#interactive-vr .interactive-vr__information p {
+  width: 450px;
+  font-size: 1em;
+  font-family: "Alata";
+}
+main section#our-creations {
+  margin-bottom: 200px;
+}
+main section#our-creations .our-creations__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+main section#our-creations .our-creations__top h2 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+main section#our-creations .our-creations__top button {
+  padding: 16px 48px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Alata";
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+main section#our-creations .our-creations__top button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+main section#our-creations .our-creations__cards {
+  width: 100%;
+}
+main section#our-creations .our-creations__cards .cards__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item {
+  flex: 1;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 100%;
+  background: black;
+  background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.7) 99%);
+  transition: 0.5s ease;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a:hover::after {
+  background: none;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a img {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a:hover img {
+  opacity: 0.3;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a span {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  font-size: 3em;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  z-index: 999;
+}
+main section#our-creations .our-creations__cards .cards__row .cards__item a:hover span {
+  color: black;
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 40px 0;
+  font-family: "Alata";
+  color: #fff;
+}
+footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+footer .footer-top .footer-top__social-media a {
+  margin-left: 16px;
+}
+footer .footer-top .footer-top__social-media a:hover {
+  padding-bottom: 10px;
+  position: relative;
+}
+footer .footer-top .footer-top__social-media a:hover::after {
+  content: "";
+  height: 4px;
+  background: white;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: animationBorderSocialMedia 0.3s ease-in-out forwards;
+}
+footer .footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+footer .footer-middle nav ul {
+  display: flex;
+}
+footer .footer-middle nav ul li {
+  margin-right: 32px;
+}
+footer .footer-middle nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .footer-middle nav ul li a:hover {
+  padding-bottom: 10px;
+  position: relative;
+}
+footer .footer-middle nav ul li a:hover::after {
+  content: "";
+  height: 4px;
+  background: white;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: animationBorderMenu 0.3s ease-in-out forwards;
+}
+footer .footer-middle p {
+  font-family: "Josefin Sans";
+  font-size: 1em;
+}
+footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-bottom .attribution {
+  font-family: "Josefin Sans";
+}
+footer .footer-bottom .attribution a {
+  font-family: inherit;
+  color: white;
+}
+
+@keyframes animationBorderMenu {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40px;
+  }
+}
+@keyframes animationBorderSocialMedia {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
