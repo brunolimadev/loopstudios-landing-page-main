@@ -36,10 +36,9 @@ a {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    height: auto;
 }
 
 header {
@@ -49,6 +48,7 @@ header {
     background-size: cover;
 
     nav {
+        position: relative;
         width: 100%;
         height: 150px;
         display: flex;
@@ -85,19 +85,45 @@ header {
                 }
             }
         }
+
+        .hamburguer-menu {
+
+            width: 48px;
+            height: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+
+            .line {
+                width: 100%;
+                height: 4px;
+                background-color: white;
+            }
+
+        }
     }
 
     .header-caption {
-        width: 50%;
+        width: 60%;
         display: inline-block;
         margin-top: 60px;
-        padding: 36px;
-        font-family: "Josefin Sans";
-        font-weight: 300;
         font-size: 2.1em;
-        color: #fff;
-        text-transform: uppercase;
+        padding: 36px;
         border: 1px solid white;
+
+        h1 {
+            font-size: 2.1em;
+            font-family: "Josefin Sans";
+            font-weight: 300;
+            color: #fff;
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -191,7 +217,7 @@ main {
                             width: 100%;
                             height: 100%;
                             background: black;
-                            background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.7) 99%);
+                            background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.8) 99%);
                             transition: .5s ease;
                         }
 
@@ -340,6 +366,40 @@ footer {
     }
 }
 
+@keyframes animationHamburguerMenuLine1 {
+    0% {
+
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(45deg);
+
+    }
+}
+
+@keyframes animationHamburguerMenuLine2 {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes animationHamburguerMenuLine3 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
 @keyframes animationBorderSocialMedia {
     0% {
         width: 0;
@@ -351,5 +411,60 @@ footer {
 }
 
 @media screen and (max-width: 1440px) {}
+
+
+@media screen and (max-width: 1200px) {
+
+    .container {
+        width: 90vw;
+    }
+
+    header {
+        .header-caption {
+            width: 60%;
+
+            h1 {
+                font-size: 6vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    header {
+        nav {
+
+            ul {
+                display: none;
+            }
+
+            .hamburguer-menu {
+                display: flex;
+
+                .line-1 {
+                    animation: animationHamburguerMenuLine1 .2s ease-in-out forwards;
+                    transform-origin: 10%;
+                }
+
+                .line-2 {
+                    // transform: rotate(45deg);
+                    animation: animationHamburguerMenuLine2 .4s ease-in-out forwards;
+
+                }
+
+                .line-3 {
+                    // transform: rotate(-45deg);
+                    animation: animationHamburguerMenuLine3 .2s ease-in-out forwards;
+                    transform-origin: 5%;
+
+                }
+
+            }
+        }
+    }
+
+}
+
 
 @media screen and (max-width: 375px) {}

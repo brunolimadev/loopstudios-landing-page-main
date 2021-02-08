@@ -36,10 +36,9 @@ a {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  height: auto;
 }
 
 header {
@@ -49,6 +48,7 @@ header {
   background-size: cover;
 }
 header nav {
+  position: relative;
   width: 100%;
   height: 150px;
   display: flex;
@@ -79,17 +79,38 @@ header nav ul li a:hover::after {
   transform: translate(-50%, -50%);
   animation: animationBorderMenu 0.3s ease-in-out forwards;
 }
+header nav .hamburguer-menu {
+  width: 48px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+header nav .hamburguer-menu .line {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+}
 header .header-caption {
-  width: 50%;
+  width: 60%;
   display: inline-block;
   margin-top: 60px;
+  font-size: 2.1em;
   padding: 36px;
+  border: 1px solid white;
+}
+header .header-caption h1 {
+  font-size: 2.1em;
   font-family: "Josefin Sans";
   font-weight: 300;
-  font-size: 2.1em;
   color: #fff;
   text-transform: uppercase;
-  border: 1px solid white;
 }
 
 main {
@@ -172,7 +193,7 @@ main section#our-creations .our-creations__cards .cards__row .cards__item a::aft
   width: 100%;
   height: 100%;
   background: black;
-  background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.7) 99%);
+  background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.8) 99%);
   transition: 0.5s ease;
 }
 main section#our-creations .our-creations__cards .cards__row .cards__item a:hover::after {
@@ -286,12 +307,69 @@ footer .footer-bottom .attribution a {
     width: 40px;
   }
 }
+@keyframes animationHamburguerMenuLine1 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes animationHamburguerMenuLine2 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+@keyframes animationHamburguerMenuLine3 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
 @keyframes animationBorderSocialMedia {
   0% {
     width: 0;
   }
   100% {
     width: 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 90vw;
+  }
+
+  header .header-caption {
+    width: 60%;
+  }
+  header .header-caption h1 {
+    font-size: 6vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+  header nav .hamburguer-menu {
+    display: flex;
+  }
+  header nav .hamburguer-menu .line-1 {
+    animation: animationHamburguerMenuLine1 0.2s ease-in-out forwards;
+    transform-origin: 10%;
+  }
+  header nav .hamburguer-menu .line-2 {
+    animation: animationHamburguerMenuLine2 0.4s ease-in-out forwards;
+  }
+  header nav .hamburguer-menu .line-3 {
+    animation: animationHamburguerMenuLine3 0.2s ease-in-out forwards;
+    transform-origin: 5%;
   }
 }
 
