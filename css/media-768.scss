@@ -1,0 +1,133 @@
+@media screen and (max-width: 768px) {
+    header {
+        & > .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hamburguer-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        nav {
+            ul {
+                display: none;
+            }
+        }
+
+        .header-caption {
+            width: 100%;
+            margin-top: 25vw;
+
+            h1 {
+                font-family: "Josefin Sans";
+                font-weight: 300;
+                color: #fff;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    #interactive-vr {
+        & > .container {
+            display: flex;
+            flex-direction: column;
+
+            & > .interactive-vr__information {
+                width: 100%;
+                position: relative;
+                padding: 100px 0 0 0;
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                & > h2 {
+                    font-size: 6vw;
+                    font-family: "Josefin Sans";
+                    flex: 1;
+                }
+
+                & > p {
+                    font-size: 4vw;
+                    font-family: "Josefin Sans";
+                }
+            }
+        }
+    }
+
+    main {
+        .our-creations {
+            &__top {
+                display: flex;
+                flex-direction: column;
+
+                & > h2 {
+                    font-size: 6vw;
+                }
+
+                & > button {
+                    display: none;
+                }
+            }
+
+            &__cards {
+                .cards__row {
+                    grid-template-columns: 1fr;
+
+                    .cards__item {
+                        overflow: hidden;
+                        max-height: 400px;
+
+                        a {
+                            &::after {
+                                bottom: 0;
+                            }
+
+                            span {
+                                font-size: 6vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .container {
+            .footer-top {
+                justify-content: center;
+                &__social-media {
+                    display: none;
+                }
+            }
+
+            .footer-middle {
+                display: flex;
+                flex-direction: column;
+
+                nav {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 5rem;
+
+                        li {
+                            margin-bottom: 2rem;
+                            margin-right: 0;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .footer-bottom {
+                justify-content: center;
+            }
+        }
+    }
+}
