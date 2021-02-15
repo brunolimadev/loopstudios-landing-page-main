@@ -202,8 +202,9 @@ main .our-creations__cards .cards__row .cards__item a:hover span {
 }
 main button {
   padding: 16px 48px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-family: "Alata", arial, sans-serif;
@@ -211,7 +212,8 @@ main button {
   transition: background-color 200ms ease-in-out;
 }
 main button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
+  color: white;
 }
 
 footer {

@@ -10,6 +10,7 @@
     let socialMediaContainerElement = document.querySelector(
         ".footer-top__social-media"
     );
+    let menuIsOpen = false;
 
     handleDetecScreenAndAjustElements();
     handleResizeDocument();
@@ -54,7 +55,7 @@
     function handleClickOnHeader() {
         headerElement.addEventListener("click", (event) => {
             let target = event.target;
-
+            handleAriaLabelOnMenu();
             if (
                 target.classList[0] === "hamburguer-menu" ||
                 target.classList[0] === "hamburguer-menu__line"
@@ -67,5 +68,20 @@
                     : (document.body.style.overflow = "hidden");
             }
         });
+    }
+
+    function handleAriaLabelOnMenu() {
+        menuIsOpen = !menuIsOpen;
+
+        menuIsOpen
+            ? hamburguerMenuElement.setAttribute(
+                  "arial-label",
+                  "Ícone fechar menu"
+              )
+            : hamburguerMenuElement.setAttribute(
+                  "arial-label",
+                  "Ícone abrir menu"
+              );
+        console.log(hamburguerMenuElement);
     }
 })();

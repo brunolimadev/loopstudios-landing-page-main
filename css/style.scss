@@ -199,8 +199,9 @@ main {
 
     button {
         padding: 16px 48px;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
         text-transform: uppercase;
         letter-spacing: 4px;
         font-family: variables.$font-family-title;
@@ -208,7 +209,8 @@ main {
         transition: background-color 200ms ease-in-out;
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: black;
+            color: white;
         }
     }
 }
