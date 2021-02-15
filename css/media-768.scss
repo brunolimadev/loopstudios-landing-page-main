@@ -1,14 +1,95 @@
 @media screen and (max-width: 768px) {
     header {
+        .mobile-menu--open {
+            animation: mobileMenuOpacity 300ms ease-out forwards;
+        }
+
+        .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 999;
+            transition: all 0.3s ease-in-out;
+
+            &__top {
+                width: 90vw;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            &__items {
+                width: 90vw;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex: 1;
+
+                nav {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    justify-content: center;
+                    ul {
+                        width: 100%;
+
+                        display: flex;
+                        flex-direction: column;
+
+                        li {
+                            margin-left: 0;
+                            margin-bottom: 2.6em;
+
+                            a {
+                                text-transform: uppercase;
+                                font-family: variables.$font-family-body;
+                                font-size: 6vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         & > .container {
             display: flex;
             flex-direction: column;
         }
 
         .hamburguer-menu {
+            width: 34px;
+            height: 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            cursor: pointer;
+
+            &__line {
+                width: 100%;
+                height: 4px;
+                background-color: white;
+            }
+        }
+
+        .open {
+            display: flex;
+
+            & > .hamburguer-menu__line:nth-child(1) {
+                transform-origin: 8px 0;
+                animation: hamburguerMenuLine1Animation 0.3s ease-out forwards;
+            }
+
+            & > .hamburguer-menu__line:nth-child(2) {
+                animation: hamburguerMenuLine2Animation 0.3s ease-out forwards;
+            }
+
+            & > .hamburguer-menu__line:nth-child(3) {
+                animation: hamburguerMenuLine3Animation 0.3s ease-out forwards;
+                transform-origin: 0;
+            }
         }
 
         nav {
@@ -60,6 +141,16 @@
     }
 
     main {
+        button.--lg {
+            display: block;
+            width: 50vw;
+            margin-top: 3rem;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            font-size: 3vw;
+        }
+
         .our-creations {
             &__top {
                 display: flex;
@@ -102,7 +193,7 @@
             .footer-top {
                 justify-content: center;
                 &__social-media {
-                    display: none;
+                    margin-bottom: 3rem;
                 }
             }
 
@@ -114,7 +205,7 @@
                     ul {
                         display: flex;
                         flex-direction: column;
-                        margin-bottom: 5rem;
+                        margin-bottom: 2rem;
 
                         li {
                             margin-bottom: 2rem;
@@ -129,5 +220,46 @@
                 justify-content: center;
             }
         }
+    }
+}
+
+@keyframes mobileMenuOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hamburguerMenuLine1Animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes hamburguerMenuLine2Animation {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-70%);
+    }
+}
+
+@keyframes hamburguerMenuLine3Animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
     }
 }

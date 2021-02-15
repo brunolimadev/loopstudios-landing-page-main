@@ -1,67 +1,59 @@
 (function () {
-    let maxResolution = 768;
-    let isOpenMenu = false;
-    let hamburguerMenu = document.querySelector(".hamburguer-menu");
+    let hamburguerMenuElement = document.querySelector(".hamburguer-menu");
+    let mobileMenuElement = document.querySelector(".mobile-menu");
     let headerElement = document.querySelector("header");
-    let menuParentElement = headerElement.querySelector(".container > nav");
-    let menuElement = headerElement.querySelector(".container > nav > ul");
-    let logoElement = headerElement.querySelector(".container nav img");
+    let buttonElement = document.querySelector(".btn");
+    let cardsContainerElement = document.querySelector(".our-creations__cards");
+    let socialMediaContainerElement = document.querySelector(
+        ".footer-top__social-media"
+    );
+    let ourCreationsTopElement = document.querySelector(".our-creations__top");
 
-    // if (window.screen.width <= maxResolution) {
-    //     onClickMenu();
-    // }
+    let footerTopContainer = document.querySelector(".footer-top");
+    let footerMiddleContainer = document.querySelector(".footer-middle");
 
-    // if (window.screen.width > maxResolution && !isOpenMenu) {
-    //     headerElement.querySelector("& > div").classList.add("container");
-    // }
+    if (window.screen.width <= 768) {
+        buttonElement.classList.add("--lg");
+        cardsContainerElement.appendChild(buttonElement);
+        footerMiddleContainer
+            .querySelector("nav")
+            .insertAdjacentElement("beforeend", socialMediaContainerElement);
+        socialMediaContainerElement.style.display = "block";
+    }
 
-    // function onClickMenu() {
-    //     hamburguerMenu.addEventListener("click", () => {
-    //         // console.log(hamburguerMenu);
-    //         isOpenMenu = !isOpenMenu;
+    window.addEventListener("resize", () => {
+        if (window.screen.width <= 768) {
+            buttonElement.classList.add("--lg");
+            cardsContainerElement.appendChild(buttonElement);
+            footerMiddleContainer
+                .querySelector("nav")
+                .insertAdjacentElement(
+                    "beforeend",
+                    socialMediaContainerElement
+                );
+            socialMediaContainerElement.style.display = "block";
+        }
+        if (window.screen.width > 768) {
+            buttonElement.classList.contains("--lg") &&
+                buttonElement.classList.remove("--lg");
+            ourCreationsTopElement.appendChild(buttonElement);
+            footerTopContainer.appendChild(socialMediaContainerElement);
+        }
+    });
 
-    //         handleMobileMenu();
-    //         if (isOpenMenu) {
-    //             hamburguerMenu
-    //                 .querySelector(".line:nth-child(1)")
-    //                 .classList.add("line-1");
+    headerElement.addEventListener("click", (event) => {
+        let target = event.target;
 
-    //             hamburguerMenu
-    //                 .querySelector(".line:nth-child(2)")
-    //                 .classList.add("line-2");
-
-    //             hamburguerMenu
-    //                 .querySelector(".line:nth-child(3)")
-    //                 .classList.add("line-3");
-    //         } else {
-    //             hamburguerMenu
-    //                 .querySelector(".line:nth-child(1)")
-    //                 .classList.remove("line-1");
-
-    //             hamburguerMenu
-    //                 .querySelector(".line:nth-child(2)")
-    //                 .classList.remove("line-2");
-
-    //             hamburguerMenu
-    //                 .querySelector(".line:nth-child(3)")
-    //                 .classList.remove("line-3");
-    //         }
-    //     });
-    // }
-
-    // function handleMobileMenu() {
-    //     let headerContainerElement = headerElement.querySelector(
-    //         "header > div"
-    //     );
-
-    //     if (isOpenMenu) {
-    //         headerContainerElement.classList.remove("container");
-    //         menuParentElement.classList.add("menu-mobile");
-    //         document.body.style.overflow = "hidden";
-    //     } else {
-    //         headerContainerElement.classList.add("container");
-    //         menuParentElement.classList.remove("menu-mobile");
-    //         document.body.style.overflow = "scroll";
-    //     }
-    // }
+        if (
+            target.classList[0] === "hamburguer-menu" ||
+            target.classList[0] === "hamburguer-menu__line"
+        ) {
+            mobileMenuElement.classList.toggle("d-none");
+            mobileMenuElement.classList.toggle("mobile-menu--open");
+            hamburguerMenuElement.classList.toggle("open");
+            mobileMenuElement.classList.contains("d-none")
+                ? (document.body.style.overflow = "auto")
+                : (document.body.style.overflow = "hidden");
+        }
+    });
 })();

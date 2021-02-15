@@ -16,31 +16,55 @@
 
 <body>
     <header>
-        <div class="container">
-            <nav>
+        <div class="mobile-menu d-none">
+            <div class="mobile-menu__top">
                 <img src="../images/logo.svg" alt="" class="logo" />
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
                 <div class="hamburguer-menu">
                     <div class="hamburguer-menu__line"></div>
                     <div class="hamburguer-menu__line"></div>
                     <div class="hamburguer-menu__line"></div>
                 </div>
-            </nav>
-
-            <div class="header-caption">
-                <h1>
-                    Immersive <br />
-                    experiences <br />
-                    that deliver
-                </h1>
+            </div>
+            <div class="mobile-menu__items">
+                <nav>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
+        <div class="desktop-menu">
+            <div class="container">
+                <nav>
+                    <img src="../images/logo.svg" alt="" class="logo" />
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                    <div class="hamburguer-menu">
+                        <div class="hamburguer-menu__line"></div>
+                        <div class="hamburguer-menu__line"></div>
+                        <div class="hamburguer-menu__line"></div>
+                    </div>
+                </nav>
+
+                <div class="header-caption">
+                    <h1>
+                        Immersive <br />
+                        experiences <br />
+                        that deliver
+                    </h1>
+                </div>
+            </div>
+        </div>
+
     </header>
 
     <main>
@@ -66,7 +90,7 @@
             <div class="container">
                 <div class="our-creations__top">
                     <h2>Our creations</h2>
-                    <button>See all</button>
+                    <button class="btn">See all</button>
                 </div>
                 <div class="our-creations__cards cards">
                     <div class="cards__row">
