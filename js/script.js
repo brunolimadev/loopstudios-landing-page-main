@@ -17,8 +17,8 @@
     handleClickOnHeader();
 
     function handleDetecScreenAndAjustElements() {
-        if (window.screen.width <= 768 || window.outerWidth <= 768) {
-            buttonElement.classList.add("--lg");
+        if (window.screen.width <= 768 || window.innerWidth <= 768) {
+            buttonElement.classList.add("lg");
             cardsContainerElement.appendChild(buttonElement);
             footerMiddleContainer
                 .querySelector("nav")
@@ -32,8 +32,8 @@
 
     function handleResizeDocument() {
         window.addEventListener("resize", () => {
-            if (window.screen.width <= 768 || window.outerWidth <= 768) {
-                buttonElement.classList.add("--lg");
+            if (window.innerWidth <= 768) {
+                buttonElement.classList.add("lg");
                 cardsContainerElement.appendChild(buttonElement);
                 footerMiddleContainer
                     .querySelector("nav")
@@ -42,10 +42,9 @@
                         socialMediaContainerElement
                     );
                 socialMediaContainerElement.style.display = "block";
-            }
-            if (window.screen.width > 768) {
-                buttonElement.classList.contains("--lg") &&
-                    buttonElement.classList.remove("--lg");
+            } else {
+                buttonElement.classList.contains("lg") &&
+                    buttonElement.classList.remove("lg");
                 ourCreationsTopElement.appendChild(buttonElement);
                 footerTopContainer.appendChild(socialMediaContainerElement);
             }
@@ -82,6 +81,5 @@
                   "arial-label",
                   "Ícone abrir menu"
               );
-        console.log(hamburguerMenuElement);
     }
 })();
