@@ -200,7 +200,7 @@ main .our-creations__cards .cards__row .cards__item a figure figcaption {
   bottom: 40px;
   left: 40px;
   color: white;
-  font-size: 2.6vw;
+  font-size: 2vw;
   text-transform: uppercase;
   transition: 0.5s ease;
   z-index: 999;
