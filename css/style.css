@@ -42,7 +42,7 @@ a {
 
 .container {
   max-width: 1200px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -167,7 +167,7 @@ main .our-creations__cards .cards__row .cards__item a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 5px;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: black;
@@ -177,28 +177,33 @@ main .our-creations__cards .cards__row .cards__item a::after {
 main .our-creations__cards .cards__row .cards__item a:hover::after {
   background: none;
 }
-main .our-creations__cards .cards__row .cards__item a img {
+main .our-creations__cards .cards__row .cards__item a:hover img, main .our-creations__cards .cards__row .cards__item a:hover source {
+  opacity: 0.3;
+}
+main .our-creations__cards .cards__row .cards__item a:hover figcaption {
+  color: black;
+}
+main .our-creations__cards .cards__row .cards__item a figure {
+  height: 100%;
+}
+main .our-creations__cards .cards__row .cards__item a figure img,
+main .our-creations__cards .cards__row .cards__item a figure source {
   position: relative;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 1;
   transition: 0.5s ease;
 }
-main .our-creations__cards .cards__row .cards__item a:hover img {
-  opacity: 0.3;
-}
-main .our-creations__cards .cards__row .cards__item a span {
+main .our-creations__cards .cards__row .cards__item a figure figcaption {
   position: absolute;
   bottom: 40px;
   left: 40px;
   color: white;
-  font-size: 2.2vw;
+  font-size: 2.6vw;
   text-transform: uppercase;
   transition: 0.5s ease;
   z-index: 999;
-}
-main .our-creations__cards .cards__row .cards__item a:hover span {
-  color: black;
 }
 main button {
   padding: 16px 48px;
@@ -493,12 +498,12 @@ footer .footer-bottom .attribution a {
   }
   main .our-creations__cards .cards__row .cards__item {
     overflow: hidden;
-    max-height: 400px;
+    max-height: 240px;
   }
   main .our-creations__cards .cards__row .cards__item a::after {
     bottom: 0;
   }
-  main .our-creations__cards .cards__row .cards__item a span {
+  main .our-creations__cards .cards__row .cards__item a figure figcaption {
     font-size: 6vw;
   }
 

@@ -3,7 +3,7 @@
 
 .container {
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -147,7 +147,7 @@ main {
                             content: "";
                             position: absolute;
                             left: 0;
-                            bottom: 5px;
+                            bottom: 0;
                             width: 100%;
                             height: 100%;
                             background: black;
@@ -165,31 +165,37 @@ main {
                             }
                         }
 
-                        img {
-                            position: relative;
-                            width: 100%;
-                            object-fit: cover;
-                            opacity: 1;
-                            transition: 0.5s ease;
-                        }
-
-                        &:hover img {
+                        &:hover img,
+                        &:hover source {
                             opacity: 0.3;
                         }
-
-                        span {
-                            position: absolute;
-                            bottom: 40px;
-                            left: 40px;
-                            color: white;
-                            font-size: 2.2vw;
-                            text-transform: uppercase;
-                            transition: 0.5s ease;
-                            z-index: 999;
+                        &:hover figcaption {
+                            color: black;
                         }
 
-                        &:hover span {
-                            color: black;
+                        figure {
+                            height: 100%;
+
+                            img,
+                            source {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                opacity: 1;
+                                transition: 0.5s ease;
+                            }
+
+                            figcaption {
+                                position: absolute;
+                                bottom: 40px;
+                                left: 40px;
+                                color: white;
+                                font-size: 2.6vw;
+                                text-transform: uppercase;
+                                transition: 0.5s ease;
+                                z-index: 999;
+                            }
                         }
                     }
                 }

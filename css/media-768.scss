@@ -171,15 +171,17 @@
 
                     .cards__item {
                         overflow: hidden;
-                        max-height: 400px;
+                        max-height: 240px;
 
                         a {
                             &::after {
                                 bottom: 0;
                             }
 
-                            span {
-                                font-size: 6vw;
+                            figure {
+                                figcaption {
+                                    font-size: 6vw;
+                                }
                             }
                         }
                     }
